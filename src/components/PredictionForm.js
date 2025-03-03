@@ -10,7 +10,7 @@ const PredictionForm = ({ matches }) => {
         setLoadingId(matchId);
         setError(null);
         try {
-            const response = await axios.get(`http://localhost:5000/api/predict/${matchId}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/predict/${matchId}`);
             if (!response.data.prediction) {
                 throw new Error('Invalid prediction data received');
             }
