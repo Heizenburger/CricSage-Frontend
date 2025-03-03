@@ -11,7 +11,7 @@ function App() {
     useEffect(() => {
         const fetchMatches = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/matches');
+                const response = await axios.get('${process.env.REACT_APP_API_URL}/api/matches');
                 setMatches(response.data);
                 setLoading(false);
             } catch (err) {
